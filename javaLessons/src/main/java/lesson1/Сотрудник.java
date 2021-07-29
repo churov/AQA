@@ -1,19 +1,27 @@
 package src.main.java.lesson1;
 
 public class Сотрудник {
-    public void foo(){
+    String fio;
+    String post;
+    String email;
+    String phone;
+    long salary;
+    int age;
 
-    }
-    private String fio;
-    private String post;
+    public Сотрудник(String myfio, String mypost, String myemail, String myphone, long mysalary, int myage) {
 
+        fio = myfio;
+        post = mypost;
+        email = myemail;
+        phone = myphone;
+        salary = mysalary;
+        age = myage;
 
-    public Сотрудник(String fio, String post, String email, String phone, int salary, int age) {
-        System.out.printf("Конструктор класса Сотрудник");
-        fio = "Мячеслав";
-        post = "Директор";
     }
 }
+
+
+
 
 
 
