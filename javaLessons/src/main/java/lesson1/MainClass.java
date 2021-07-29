@@ -1,4 +1,4 @@
-package main.java.lesson1;
+package src.main.java.lesson1;
 import java.sql.SQLOutput;
 import java.util.Scanner;
 public class MainClass {
@@ -10,6 +10,8 @@ public class MainClass {
         invertArray();
         massive100();
         massiveMultiply();
+        massiveDiagonal(7);
+        massive2Args(5, 7);
     }
     public static boolean isSumGreaterThan50(int a, int b) {
         int sum = a + b;
@@ -72,6 +74,34 @@ public class MainClass {
             }
             System.out.println("arr[" + i + "] = " + arr[i]);
         }
+
+    }
+   public static void massiveDiagonal(int d){
+       int[][] arr = new int[d][d];
+        for (int i=0; i<=d-1; i++){
+            for (int j=0; j<=d-1; j++){
+                if (j==i) {
+                    System.out.print("* ");
+                }
+                else if(j==((d-1)-i)){
+                    System.out.print("* ");
+                }
+                else {
+                    System.out.print("0 ");
+                }
+
+            }
+            System.out.println();
+        }
+
+
+    }
+    public static void massive2Args(int len, int initialValue) {
+    int [] arr = new int [len];
+        for (int i=0; i<=len-1; i++){
+            System.out.print(initialValue);
+        }
+
 
     }
 }
