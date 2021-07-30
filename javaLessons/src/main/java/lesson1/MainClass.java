@@ -3,17 +3,17 @@ import java.sql.SQLOutput;
 import java.util.Scanner;
 public class MainClass {
     public static void main(String[] args) {
-        isSumGreaterThan50(10,11);
+        isSumBetween10and20(10,11);
         positiveOrNegative(0);
         trueOrFalse(-5);
         stringAndValue("Тут должна быть строка", 5);
         invertArray();
-        massive100();
-        massiveMultiply();
-        massiveDiagonal(7);
-        massive2Args(5, 7);
+        array100();
+        arrayMultiply();
+        arrayDiagonal(7);
+        array2Args(9, 7);
     }
-    public static boolean isSumGreaterThan50(int a, int b) {
+    public static boolean isSumBetween10and20(int a, int b) {
         int sum = a + b;
         if (sum >= 10 && sum<=20) {
             System.out.println("tru");
@@ -59,14 +59,14 @@ public class MainClass {
         System.out.println("Инвертированный массив arr[i] = " + arr[0] + arr[1] + arr[2]+arr[3]+arr[4]+arr[5]+arr[6]+arr[7]+arr[8]+arr[9]);
     }
 
-    public static void  massive100() {
+    public static void  array100() {
         int[] arr = new int [100];
         for (int i=1; i<arr.length; i++){
             arr[i] = i;
             System.out.println("arr[" + i + "] = " + arr[i]);
         }
     }
-    public static void massiveMultiply(){
+    public static void arrayMultiply(){
         int[] arr = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
         for (int i=0; i< arr.length; i++){
             if (arr[i]<6) {
@@ -76,7 +76,7 @@ public class MainClass {
         }
 
     }
-   public static void massiveDiagonal(int d){
+   public static void arrayDiagonal(int d){
        int[][] arr = new int[d][d];
         for (int i=0; i<=d-1; i++){
             for (int j=0; j<=d-1; j++){
@@ -96,13 +96,14 @@ public class MainClass {
 
 
     }
-    public static void massive2Args(int len, int initialValue) {
-    int [] arr = new int [len];
-        for (int i=0; i<=len-1; i++){
-            System.out.print(initialValue);
+
+    public static void array2Args(int len, int initialValue){
+        int[] arr = new int[len];
+        for (int i = 0; i < len; i++) {
+            arr[i] = initialValue;
+            System.out.print("[" + i + "]" + arr[i] + " ");
         }
-
-
     }
+
 }
 
