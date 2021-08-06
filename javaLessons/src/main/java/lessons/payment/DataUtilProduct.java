@@ -22,7 +22,6 @@ public class DataUtilProduct {
             this.add(new Product("пылесос", "витязь", 150));
         }
     };
-
     //создание уникального списка товаров по наименованию
     private static Set<String> createNameSet() {
         Set<String> nameSet = new TreeSet<>();
