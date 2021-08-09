@@ -6,13 +6,13 @@ public class Converter {
 
         int sum = 0;
 
-        if (4 != strArray.length) throw new MyArraySizeException();
+        if (strArray.length!=4) throw new MyArraySizeException();
 
-        for (int i = 0; i < strArray.length; i++) {
+        for (int i = 0;strArray.length>i; i++) {
 
-            if (4 != strArray[i].length) throw new MyArraySizeException();
+            if (strArray[i].length!=4) throw new MyArraySizeException();
 
-            for (int k = 0; k < strArray[i].length; k++) {
+            for (int k = 0;  strArray[i].length>k; k++) {
 
                 try {
                     sum += Integer.parseInt(strArray[i][k]);
