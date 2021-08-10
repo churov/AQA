@@ -10,12 +10,12 @@ public class Main {
     public static void main(String[] args) {
 
         List<FigureInterface> figures = new ArrayList<FigureInterface>();
-        figures.add(new Rectangle(4, 5,"Black" , "Pink"));
-        figures.add(new Rectangle(5, 8, "Red", "Orange"));
-        figures.add(new Triangle(5, 8, 11, "Yellow", "Green"));
-        figures.add(new Triangle(3, 4, 5,"Green", "Yellow"));
-        figures.add(new Circle(2, "Orange", "Red"));
-        figures.add(new Circle(3, "Pink", "Pink"));
+        figures.add(new Rectangle(4, 5, "Red", "Blue"));
+        figures.add(new Rectangle(5, 6, "White", "Red"));
+        figures.add(new Triangle(5, 8, 11, "Orange", "Black"));
+        figures.add(new Triangle(3, 4, 5, "Green", "White"));
+        figures.add(new Circle(2, "Black", "White"));
+        figures.add(new Circle(3, "White", "Black"));
         Collections.sort(figures, new FigureComparator());
         for (FigureInterface f : figures) {
             System.out.println(f.toString());
@@ -24,52 +24,41 @@ public class Main {
 
     interface FigureInterface {
         public float area();
-
         public float perimetr();
         public String boarderColor();
-        public String backgroundColor();
+        public String backgrounfColor();
+
+
     }
 
-    static class Rectangle implements FigureInterface {
+    static class Square implements FigureInterface {
 
         @Override
         public float area() {
-            return a * b;
+            return a * a;
         }
 
         @Override
         public float perimetr() {
-            return (a*2)+(b*2);
+            return 4 * a;
         }
-        @Override
-        public String boarderColor() {
-            return (bc);
-        }
-        @Override
-        public String backgroundColor() {
-            return (bgc);
-        }
+
         @Override
         public String toString() {
 
             String info = name;
             info += " perimetr:" + perimetr();
             info += " area:" + area();
-            info += " boarder color:" + boarderColor();
-            info += " background color:"+ backgroundColor();
             info += "\n";
             return info;
         }
 
-        public Rectangle(float a, float b, String bc, String bgc) {
-            this.a = a; this.b=b; this.bc=bc; this.bgc=bgc;
+        public Square(float a) {
+            this.a = a;
         }
 
         private float a;
-        private float b;
-        private String bc;
-        private String bgc;
-        private final String name = "Rectangle";
+        private final String name = "Square";
 
     }
 
@@ -85,37 +74,24 @@ public class Main {
         public float perimetr() {
             return a + b + c;
         }
-        @Override
 
-        public String boarderColor() {
-            return (bc);
-        }
-        @Override
-
-        public String backgroundColor() {
-            return (bgc);
-        }
         @Override
         public String toString() {
 
             String info = name;
             info += " perimetr:" + perimetr();
             info += " area:" + area();
-            info += " boarder color:" + boarderColor();
-            info += " background color:"+ backgroundColor();
             info += "\n";
             return info;
         }
 
-        public Triangle(float a, float b, float c,String bc, String bgc) {
+        public Triangle(float a, float b, float c) {
             this.a = a;
             this.b = b;
             this.c = c;
-            this.bc=bc; this.bgc=bgc;
         }
 
         private float a, b, c;
-        private String bc, bgc;
         private final String name = "Triangle";
 
     }
@@ -132,31 +108,22 @@ public class Main {
             return (float) (2 * Math.PI * r);
         }
 
-        public String boarderColor() {
-            return (bc);
-        }
-        public String backgroundColor() {
-            return (bgc);
-        }
         @Override
         public String toString() {
 
             String info = name;
             info += " perimetr:" + perimetr();
             info += " area:" + area();
-            info += " boarder color:" + boarderColor();
-            info += " background color:"+ backgroundColor();
             info += "\n";
             return info;
         }
 
-        public Circle(float r,String bc, String bgc) {
-            this.r = r; this.bc=bc; this.bgc=bgc;
+        public Circle(float r) {
+            this.r = r;
         }
 
         private float r;
         private final String name = "Circle";
-        private String bc, bgc;
     }
 
     static class FigureComparator implements Comparator<FigureInterface> {
